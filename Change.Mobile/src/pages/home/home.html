@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Change App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label fixed>Amount</ion-label>
+    <ion-input type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Pay</ion-label>
+    <ion-input type="number" [(ngModel)]="pay"></ion-input>
+  </ion-item>
+
+  <div padding>
+    <button ion-button block (click)="Calculate()">Calculate Change Pay</button>
+  </div>
+
+  <ion-item *ngIf="changeModels.change<0">จำนวนเงินไม่พอจ่าย</ion-item>
+  <ion-item *ngIf="changeModels.change>=0">Change: {{changeModels.change}}</ion-item>
+  <ion-item *ngIf="changeModels.thounsand>0">1000 x {{changeModels.thounsand}}</ion-item>
+  <ion-item *ngIf="changeModels.fiveHundred>0">500 x {{changeModels.fiveHundred}}</ion-item>
+  <ion-item *ngIf="changeModels.oneHundred>0">100 x {{changeModels.oneHundred}}</ion-item>
+  <ion-item *ngIf="changeModels.fifty>0">50 x {{changeModels.fifty}}</ion-item>
+  <ion-item *ngIf="changeModels.twenty>0">20 x {{changeModels.twenty}}</ion-item>
+  <ion-item *ngIf="changeModels.five>0">5 x {{changeModels.five}}</ion-item>
+  <ion-item *ngIf="changeModels.one>0">1 x {{changeModels.one}}</ion-item>
+
+</ion-content>
