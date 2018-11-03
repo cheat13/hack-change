@@ -5,7 +5,7 @@ namespace Change.lib
     public class CalculateChanges
     {
         public int[] Banks = new int[] { 1000, 500, 100, 50, 20, 5, 1 };
-        public ChangeModels calculate(int pay, int amount)
+        public ChangeModels Calculate(int pay, int amount)
         {
             var changeModels = new ChangeModels();
             changeModels.Change = pay - amount;
